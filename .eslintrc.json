@@ -1,0 +1,35 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "mocha": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb",
+    "prettier",
+    "prettier/react"
+  ],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "es5",
+        "singleQuote": true,
+        "printWidth": 80
+      }
+    ],
+    "no-console": 0,
+    "max-len": [
+      "error",
+      {
+        "code": 80,
+        "ignoreUrls": true
+      }
+    ]
+  },
+  "plugins": [
+    "mocha",
+    "prettier"
+  ]
+}
