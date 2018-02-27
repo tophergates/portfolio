@@ -1,15 +1,22 @@
+// Global packages/modules
 const Router = require('express').Router();
 
-Router.get('/api', (req, res) => {
-  res.json({
-    message: 'Success',
-  });
-});
+// Local modules
+const apiRouter = require('./api');
 
-Router.get('/', (req, res) => {
-  res.json({
-    message: 'Hello, World!',
-  });
+/**
+ * API Routes
+ */
+
+Router.use('/api', apiRouter);
+
+/**
+ * Universal Route
+ */
+
+// Render index.html
+Router.get('*', (req, res) => {
+  res.sendFile('index.html');
 });
 
 module.exports = Router;

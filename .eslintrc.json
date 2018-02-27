@@ -19,6 +19,12 @@
         "printWidth": 80
       }
     ],
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extentions": [".js", ".jsx"]
+      }
+    ],
     "no-console": 0,
     "max-len": [
       "error",

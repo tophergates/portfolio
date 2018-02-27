@@ -5,6 +5,7 @@ const express = require('express');
 const helmet = require('helmet');
 // const mongoose = require('mongoose');
 const logger = require('morgan');
+const { resolve } = require('path');
 
 // Local modules
 const { ENV } = require('./config');
@@ -46,6 +47,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 if (ENV === 'development' || ENV === 'testing') {
   app.use(logger('dev'));
 }
+
+app.use(express.static(resolve(__dirname, 'client', 'build')));
 
 /**
  * APPLICATION ROUTES
